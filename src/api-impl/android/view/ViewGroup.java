@@ -4,6 +4,7 @@ import android.R;
 import android.animation.LayoutTransition;
 import android.annotation.UnsupportedAppUsage;
 import android.atl.GskCanvas;
+import android.atl.annotation.Export;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -130,6 +131,7 @@ public class ViewGroup extends View implements ViewParent, ViewManager {
 	}
 
 	/* We never call this ourselves */
+	@Export
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent event) {
 		return native_dispatchTouchEvent(widget, event, event.getX(), event.getY());
